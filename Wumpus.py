@@ -1,7 +1,6 @@
 
 # coding: utf-8
 
-# In[106]:
 
 
 import pygame
@@ -9,7 +8,6 @@ import random
 clock = pygame.time.Clock()
 
 
-# In[107]:
 
 
 class Coisa:
@@ -30,8 +28,6 @@ class Coisa:
     
 
 
-# In[108]:
-
 
 class Agente(Coisa):
     
@@ -51,27 +47,22 @@ class Agente(Coisa):
         
 
 
-# In[109]:
-
 
 class Jogador(Agente):
     def __init__(self,estadoInicial = None, funcaoAgente = None):
         super().__init__(estadoInicial,funcaoAgente)
-        #self.img = pygame.image.load('Jogador.png')
-        self.img = pygame.image.load('C:/Users/Rodri/OneDrive/Documentos/Jogador.png')
+        self.img = pygame.image.load('Jogador.png')
         self.idNoTabuleiro = -1
 
         
 
 
-# In[110]:
 
 
 class PoSo(Coisa):
     def __init__(self,estado = None,x = 0, y = 0):
         super().__init__(estado)
-        #self.img = pygame.image.load('PoSo.png')
-        self.img = pygame.image.load('C:/Users/Rodri/OneDrive/Documentos/PoSo.png')
+        self.img = pygame.image.load('PoSo.png')
         self.x = x
         self.y = y
         self.idNoTabuleiro = 2
@@ -81,33 +72,27 @@ class PoSo(Coisa):
     
 
 
-# In[111]:
-
 
 class Ouro(Coisa):
     def __init__(self,estado = None,x = 0, y = 0):
         super().__init__(estado)
-        #self.img = pygame.image.load('Ouro.png')
-        self.img = pygame.image.load('C:/Users/Rodri/OneDrive/Documentos/Ouro.png')
+        self.img = pygame.image.load('Ouro.png')
         self.x = x
         self.y = y
         self.idNoTabuleiro=1
 
 
-# In[112]:
 
 
 class Wumpus(Coisa):
     def __init__(self,estado = None,x = 0, y = 0):
         super().__init__(estado)
-        #self.img = pygame.image.load('Wumpus.png')
-        self.img = pygame.image.load('C:/Users/Rodri/OneDrive/Documentos/Wumpus.png')
+        self.img = pygame.image.load('Wumpus.png')
         self.x = x
         self.y = y
         self.idNoTabuleiro=3
 
 
-# In[113]:
 
 
 class Ambiente:
@@ -131,7 +116,6 @@ class Ambiente:
         
 
 
-# In[114]:
 
 
 class Labirinto(Ambiente):
@@ -208,12 +192,12 @@ class Labirinto(Ambiente):
 
 def encontrar (tabuleiro,x,y):
     if tabuleiro[y][x] > 1:
-        img= pygame.image.load('C:/Users/Rodri/OneDrive/Documentos/RGO.png')
+        img= pygame.image.load('RGO.png')
         return True , img
     elif tabuleiro[y][x] == 1:
-        img = pygame.image.load('C:/Users/Rodri/OneDrive/Documentos/RGF.png')
+        img = pygame.image.load('RGF.png')
         return True , img
-    txt='C:/Users/Rodri/OneDrive/Documentos/R'
+    txt='R'
     if (x>0 and tabuleiro[y][x-1]==2) or (x<3 and tabuleiro[y][x+1]==2) or (y>0 and tabuleiro[y-1][x]==2) or (y<3 and tabuleiro[y+1][x]==2):
         txt=txt+'B'
     if (x>0 and tabuleiro[y][x-1]==3) or (x<3 and tabuleiro[y][x+1]==3) or (y>0 and tabuleiro[y-1][x]==3) or (y<3 and tabuleiro[y+1][x]==3):
@@ -225,7 +209,6 @@ def encontrar (tabuleiro,x,y):
     return  False, img
 
 
-# In[116]:
 
 
 
